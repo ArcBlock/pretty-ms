@@ -45,9 +45,9 @@
     "parse-ms": "^2.1.0"
   },
   "bugs": {
-    "url": "https://github.com/sindresorhus/pretty-ms/issues"
+    "url": "https://github.com/arcblock/pretty-ms/issues"
   },
-  "homepage": "https://github.com/sindresorhus/pretty-ms#readme",
+  "homepage": "https://github.com/arcblock/pretty-ms#readme",
   "main": "index.js",
   "directories": {
     "lib": "lib"
