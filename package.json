@@ -21,7 +21,9 @@
     "coverage": "npm run lint && npm run test -- --coverage"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "lang",
+    "lib"
   ],
   "keywords": [
     "pretty",
