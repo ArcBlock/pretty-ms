@@ -1,49 +1,80 @@
 {
-	"name": "pretty-ms",
-	"version": "7.0.1",
-	"description": "Convert milliseconds to a human readable string: `1337000000` → `15d 11h 23m 20s`",
-	"license": "MIT",
-	"repository": "sindresorhus/pretty-ms",
-	"funding": "https://github.com/sponsors/sindresorhus",
-	"author": {
-		"name": "Sindre Sorhus",
-		"email": "sindresorhus@gmail.com",
-		"url": "https://sindresorhus.com"
-	},
-	"engines": {
-		"node": ">=10"
-	},
-	"scripts": {
-		"test": "xo && ava && tsd"
-	},
-	"files": [
-		"index.js",
-		"index.d.ts"
-	],
-	"keywords": [
-		"pretty",
-		"prettify",
-		"human",
-		"humanize",
-		"humanized",
-		"readable",
-		"time",
-		"ms",
-		"milliseconds",
-		"duration",
-		"period",
-		"range",
-		"text",
-		"string",
-		"number",
-		"hrtime"
-	],
-	"dependencies": {
-		"parse-ms": "^2.1.0"
-	},
-	"devDependencies": {
-		"ava": "^2.4.0",
-		"tsd": "^0.11.0",
-		"xo": "^0.30.0"
-	}
+  "name": "pretty-ms-i18n",
+  "version": "0.0.1",
+  "description": "Convert milliseconds to a human readable string: `1337000000` → `15d 11h 23m 20s`",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/pretty-ms.git"
+  },
+  "funding": "https://github.com/sponsors/sindresorhus",
+  "author": "Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "lint": "eslint tests lang lib",
+    "lint:fix": "eslint --fix tests lang lib",
+    "precommit": "CI=1 npm run test",
+    "prepush": "CI=1 npm run test",
+    "test": "npm run lint && node tools/jest.js",
+    "coverage": "npm run lint && npm run test -- --coverage"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "pretty",
+    "prettify",
+    "human",
+    "humanize",
+    "humanized",
+    "readable",
+    "time",
+    "ms",
+    "milliseconds",
+    "duration",
+    "period",
+    "range",
+    "text",
+    "string",
+    "number",
+    "hrtime"
+  ],
+  "dependencies": {
+    "parse-ms": "^2.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/pretty-ms/issues"
+  },
+  "homepage": "https://github.com/sindresorhus/pretty-ms#readme",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "lint-staged": {
+    "*.{js,jsx,mjs,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{css,less,scss,json,graphql}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run precommit",
+      "pre-push": "lint-staged && npm run prepush"
+    }
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.12.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": "^4.3.0",
+    "jest": "^26.6.1",
+    "lint-staged": "^10.4.2",
+    "prettier": "^2.1.2"
+  }
 }

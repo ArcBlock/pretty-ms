@@ -23,23 +23,27 @@ prettyMilliseconds(133);
 //=> '133ms'
 
 // `compact` option
-prettyMilliseconds(1337, {compact: true});
+prettyMilliseconds(1337, { compact: true });
 //=> '1s'
 
+// `locale` option default en_US
+prettyMilliseconds(1337, { locale: 'zh_CN' });
+//=> '1秒'
+
 // `verbose` option
-prettyMilliseconds(1335669000, {verbose: true});
+prettyMilliseconds(1335669000, { verbose: true });
 //=> '15 days 11 hours 1 minute 9 seconds'
 
 // `colonNotation` option
-prettyMilliseconds(95500, {colonNotation: true});
+prettyMilliseconds(95500, { colonNotation: true });
 //=> '1:35.5'
 
 // `formatSubMilliseconds` option
-prettyMilliseconds(100.400080, {formatSubMilliseconds: true})
+prettyMilliseconds(100.40008, { formatSubMilliseconds: true });
 //=> '100ms 400µs 80ns'
 
 // Can be useful for time durations
-prettyMilliseconds(new Date(2014, 0, 1, 10, 40) - new Date(2014, 0, 1, 10, 5))
+prettyMilliseconds(new Date(2014, 0, 1, 10, 40) - new Date(2014, 0, 1, 10, 5));
 //=> '35m'
 ```
 
@@ -56,6 +60,15 @@ Milliseconds to humanize.
 #### options
 
 Type: `object`
+
+##### locale
+
+Type: `string`\
+Default: `en_US`
+
+you can use 'en_US' or 'zh_CN' to show i18n. [Detail to see](tests/lang.spec.js)
+
+Only show: `1s` → `1秒`.
 
 ##### secondsDecimalDigits
 
@@ -129,6 +142,7 @@ Display time using colon notation: `5h 1m 45s` → `5:01:45`. Always shows time 
 Useful when you want to display time without the time units, similar to a digital watch.
 
 Setting `colonNotation` to `true` overrides the following options to `false`:
+
 - `compact`
 - `formatSubMilliseconds`
 - `separateMilliseconds`
