@@ -8,7 +8,7 @@
     "url": "git+https://github.com/arcblock/pretty-ms.git"
   },
   "funding": "https://github.com/sponsors/sindresorhus",
-  "author": "Sindre Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)",
+  "author": "Sorhus <sindresorhus@gmail.com> (https://sindresorhus.com)",
   "engines": {
     "node": ">=10"
   },
